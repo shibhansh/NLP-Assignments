@@ -1,0 +1,1075 @@
+From	From[PRP]
+From	From[ADV]+ADV
+
+jimh	+?
+
+carson	carson[N]+N
+
+.	.[PUN]
+
+u.	u.[N]+N
+
+washington	washington[N]+N
+
+.	.[PUN]
+
+edu	+?
+
+James	Jame[N]+N+PL
+James	James[N]+N
+James	Jame[V]+V+3sg+PRES
+
+Hogan	Hogan[N]+N
+Hogan	Hog[N]+AN[N/N]+N
+
+Subject	Subject[N]+N
+Subject	Subject[ADJ]+ADJ
+Subject	Subject[V]+V+INF
+Subject	Subject[V]+V
+
+:	:[PUN]
+
+Re	Re[PRP]
+Re	Re[V]+V+PRES
+Re	Re[N]+N
+
+:	:[PUN]
+
+What	What[DET]+WH
+
+'s	be[V]+V+3sg+PRES
+'s	have[V]+V+3sg+PRES
+'s	's[V]+V+3sg+PRES
+
+a	a[ART]
+a	a[N]+N
+a	a[PART]+INF
+a	a[PRP]
+a	a[ADV]+ADV
+a	a[PN]+PERS
+
+shit	shit[N]+N
+shit	shit[V]+V+INF
+shit	shit[V]+V
+
+shoveler	shoveler[N]+N
+shoveler	shovel[V]+ER[V/N]+N
+
+to	to[PART]+INF
+to	to[PRP]
+to	to[N]+N
+to	t[N]+O[N/N]+N
+
+do	do[V]+V+INF
+do	do[N]+N
+do	d[N]+O[N/N]+N
+
+?	?[PUN]
+
+was	be[V]+V+PAST
+was	be+V+PAST
+was	wa[N]+N+PL
+
+Re	Re[PRP]
+Re	Re[N]+N
+Re	Re[V]+V+PRES
+
+:	:[PUN]
+
+Amusing	Amusing[ADJ]+ADJ
+Amusing	Amuse[V]+V+PROG
+Amusing	Amusing[N]+N
+Amusing	A+muse[N]+ING[N/N]+N
+Amusing	A+muse[V]+V+PROG
+Amusing	A+musing[ADJ]+ADJ
+Amusing	A+musing[N]+N
+Amusing	A+mus[N]+ING[N/N]+N
+
+atheists	atheist[N]+N+PL
+atheists	A+theist[N]+N+PL
+
+and	and[CNJ]+COORD
+and	and[ADV]+ADV
+and	A+nd[N]+N
+
+Organization	Organization[N]+N
+Organization	Organize[V]+ATION[V/N]+N
+Organization	Organ[N]+IZE[N/V]+ATION[V/N]+N
+Organization	Organ[N]+Y[N/ADJ]+IZE[ADJ/V]+ATION[V/N]+N
+
+:	:[PUN]
+
+University	University[N]+N
+
+of	of[PRP]
+of	have[V]+V+INF
+of	of[ADV]+ADV
+
+Washington	Washington[N]+N
+
+,	,[PUN]
+
+Seattle	Seattle[N]+N
+
+Lines	Line[N]+N+PL
+Lines	Lines[N]+N
+Lines	Line[V]+V+3sg+PRES
+
+:	:[PUN]
+
+38	38[ADJ]+ADJ
+
+NNTP	+?
+
+-	-[PUN]
+
+Posting	Posting[N]+N
+Posting	Post[N]+ING[N/N]+N
+Posting	Post[V]+V+PROG
+Posting	POST+y[N]+ING[N/N]+N
+
+Host	Host[N]+N
+Host	Host[V]+V+INF
+Host	Host[V]+V
+
+:	:[PUN]
+
+carson	carson[N]+N
+
+.	.[PUN]
+
+u.	u.[N]+N
+
+washington	washington[N]+N
+
+.	.[PUN]
+
+edu	+?
+
+In	In[PRP]
+In	In[ADV]+ADV
+In	In[V]+V+3sg+PRES
+In	In[N]+N
+In	In[ADJ]+ADJ
+
+article	article[N]+N
+article	article[V]+V+INF
+
+timmbake	+?
+
+.	.[PUN]
+
+735278230	+?
+
+mcl	mcl[ADJ]
+
+timmbake	+?
+
+mcl	mcl[ADJ]
+
+.	.[PUN]
+
+ucsb	+?
+
+.	.[PUN]
+
+edu	+?
+
+Bake	Bake[V]+V
+Bake	Bake[V]+V+INF
+
+Timmons	Timmons[N]+N
+
+writes	writes[N]+N
+writes	write[V]+V+3sg+PRES
+
+:	:[PUN]
+
+James	James[N]+N
+James	Jame[N]+N+PL
+James	Jame[V]+V+3sg+PRES
+
+Hogan	Hogan[N]+N
+Hogan	Hog[N]+AN[N/N]+N
+
+writes	writes[N]+N
+writes	write[V]+V+3sg+PRES
+
+:	:[PUN]
+
+From	From[PRP]
+From	From[ADV]+ADV
+
+his	he[DET]+GEN
+his	his[PN]+PERS
+his	his+N+PL
+
+very	very[ADV]+ADV
+very	very[ADJ]+ADJ
+very	v[N]+ERY[N/N]+N
+
+first	first[ADJ]
+first	first[ADJ]+ADJ
+first	first[ADV]+ADV
+first	first[N]+N
+
+post	post[N]+N
+post	post[PRP]
+post	post[V]+V+INF
+post	post[V]+V
+post	post[ADJ]+ADJ
+
+Jim	Jim[N]+N
+
+assumed	assume[V]+V+PPART
+assumed	assumed[ADJ]+ADJ
+assumed	assume[V]+V+PAST
+
+an	an[ART]
+an	an[CNJ]+COORD
+an	an[N]+N
+an	an[ADJ]+ADJ
+an	A+n[N]+N
+
+attack	attack[N]+N
+attack	attack[V]+V+INF
+attack	attack[V]+V
+attack	attack[ADJ]+ADJ
+
+of	of[PRP]
+of	have[V]+V+INF
+of	of[ADV]+ADV
+
+ad	ad[N]+N
+ad	ad[ADV]+ADV
+ad	A+d[ADJ]+ADJ
+ad	A+d[N]+N
+
+hominem	+?
+
+,	,[PUN]
+
+sarcastic	sarcastic[ADJ]+ADJ
+sarcastic	sarcastic[N]+N
+
+innuendo	innuendo[N]+N
+
+,	,[PUN]
+
+i.e.	i.e.[ADV]+ADV
+
+,	,[PUN]
+
+shit	shit[N]+N
+shit	shit[V]+V+INF
+shit	shit[V]+V
+
+to	to[PART]+INF
+to	to[PRP]
+to	to[N]+N
+to	t[N]+O[N/N]+N
+
+be	be[V]+V+INF
+be	be[V]+V+PRES
+be	be[N]+N
+
+shoveled	shovel[N]+ED[N/ADJ]+ADJ
+shoveled	shovel[V]+V+PAST
+shoveled	shovel[V]+V+PPART
+
+.	.[PUN]
+
+He	He[PN]+PERS
+He	He[ART]
+He	He[N]+N
+
+conveniently	conveniently[ADV]+ADV
+conveniently	convenient[ADJ]+LY[ADJ/ADV]+ADV
+
+forgets	forget[V]+V+3sg+PRES
+
+this	this[DET]
+this	this[ADV]+ADV
+
+,	,[PUN]
+
+of	of[PRP]
+of	have[V]+V+INF
+of	of[ADV]+ADV
+
+course	course[N]+N
+course	course[ADV]+ADV
+course	course[V]+V+INF
+course	course[V]+V
+
+,	,[PUN]
+
+and	and[CNJ]+COORD
+and	and[ADV]+ADV
+and	A+nd[N]+N
+
+then	then[ADV]+ADV
+then	then[ADJ]+ADJ
+then	then[CNJ]+COORD
+then	then[N]+N
+
+whines	whine[V]+V+3sg+PRES
+whines	whine[N]+N+PL
+
+about	about[PRP]
+about	about[ADV]+ADV
+about	about[ADJ]+ADJ
+about	A+bout[N]+N
+about	AB+out[ADJ]+ADJ
+about	AB+out[ADV]+ADV
+about	AB+out[N]+N
+about	AB+out[V]+V+INF
+
+his	he[DET]+GEN
+his	his[PN]+PERS
+his	his+N+PL
+
+boredom	boredom[N]+N
+boredom	bore[N]+DOM[N/N]+N
+
+.	.[PUN]
+
+Ad	Ad[N]+N
+Ad	Ad[ADV]+ADV
+Ad	A+d[ADJ]+ADJ
+Ad	A+d[N]+N
+
+hominem	+?
+
+,	,[PUN]
+
+sarcastic	sarcastic[ADJ]+ADJ
+sarcastic	sarcastic[N]+N
+
+innuendo	innuendo[N]+N
+
+?	?[PUN]
+
+Absolutely	Absolutely[ADV]+ADV
+Absolutely	Absolute[ADJ]+LY[ADJ/ADV]+ADV
+
+.	.[PUN]
+
+Forgotten	Forget[V]+V+PPART
+Forgotten	Forgotten[ADJ]+ADJ
+Forgotten	Forget[V]+V+PAST
+Forgotten	Forget+V+PPART
+
+?	?[PUN]
+
+Hardly	Hardly[ADV]+ADV
+Hardly	Hard[ADJ]+LY[ADJ/ADV]+ADV
+
+.	.[PUN]
+
+Bored	Bored[ADJ]+ADJ
+Bored	Bore[N]+ED[N/ADJ]+ADJ
+Bored	Bore[V]+V+PAST
+Bored	Bore[V]+V+PPART
+
+?	?[PUN]
+
+Not	Not[PART]
+Not	Not[ADV]+ADV
+
+really	really[ADV]+ADV
+really	real[ADJ]+LY[ADJ/ADV]+ADV
+really	re[N]+AL[N/ADJ]+LY[ADJ/ADV]+ADV
+really	RE+ally[N]+N
+really	RE+ally[V]+V+INF
+
+.	.[PUN]
+
+I	I[PN]+PERS
+I	I[ADJ]
+I	I[N]+N
+I	I[ADJ]+ADJ
+
+try	try[V]+V+INF
+try	try[V]+V
+try	try[N]+N
+
+not	not[PART]
+not	not[ADV]+ADV
+
+to	to[PART]+INF
+to	to[PRP]
+to	to[N]+N
+to	t[N]+O[N/N]+N
+
+confuse	confuse[V]+V+INF
+confuse	confuse[V]+V
+
+life	life[N]+N
+life	life[V]+V+INF
+
+on	on[PRP]
+on	on[ADV]+ADV
+on	on[N]+N
+on	on[ADJ]
+on	on[ADJ]+ADJ
+
+a.	a.[N]+N
+a.	a.[ART]
+
+a.	a.[N]+N
+a.	a.[ART]
+
+with	with[PRP]
+with	with[CNJ]+COORD
+
+life	life[N]+N
+life	life[V]+V+INF
+
+.	.[PUN]
+
+I	I[PN]+PERS
+I	I[ADJ]
+I	I[N]+N
+I	I[ADJ]+ADJ
+
+just	just[ADV]+ADV
+just	just[ADJ]+ADJ
+just	just[N]+N
+
+can	can[V]+V+INF
+can	can[N]+N
+can	can[ADJ]+ADJ
+can	c[ADJ]+AN[ADJ/N]+N
+can	c[N]+AN[N/N]+N
+
+'t	it[PN]+PERS
+
+overcome	overcome[V]+V+INF
+overcome	overcome[V]+V+PPART
+overcome	overcome[V]+V
+overcome	overcome[ADJ]+ADJ
+overcome	overcome+V+PPART
+overcome	OVER+come+V+PPART
+overcome	OVER+come[V]+V+INF
+
+the	the[ART]
+the	the[N]+N
+the	the[DET]
+
+urge	urge[N]+N
+urge	urge[V]+V+INF
+urge	urge[V]+V
+
+to	to[PART]+INF
+to	to[PRP]
+to	to[N]+N
+to	t[N]+O[N/N]+N
+
+tease	tease[V]+V+INF
+tease	tease[V]+V
+tease	tease[N]+N
+
+taunt	taunt[V]+V+INF
+taunt	taunt[N]+N
+taunt	taunt[V]+V
+
+folks	folks[N]+N
+folks	folk[N]+N+PL
+
+who	who[PN]+WH
+who	who[N]+N
+
+bound	bind[V]+V+PPART
+bound	bind[V]+V+PAST
+bound	bound[N]+N
+bound	bound[ADJ]+ADJ
+bound	bound[V]+V
+bound	bound[V]+V+INF
+bound	bind+V+PAST
+bound	bind+V+PPART
+
+FAQ	+?
+
+-	-[PUN]
+
+less	less[ADV]+ADV
+less	less[DET]
+less	less[PRP]
+less	less[ADJ]+ADJ
+less	l[N]+ESS[N/N]+N
+
+onto	onto[PRP]
+
+a.	a.[N]+N
+a.	a.[ART]
+
+a.	a.[N]+N
+a.	a.[ART]
+
+with	with[PRP]
+with	with[CNJ]+COORD
+
+such	such[DET]
+such	such[PRP]
+such	such[ADJ]+ADJ
+such	such[ADV]+ADV
+
+a	a[ART]
+a	a[N]+N
+a	a[PART]+INF
+a	a[PRP]
+a	a[ADV]+ADV
+a	a[PN]+PERS
+
+chip	chip[N]+N
+chip	chip[V]+V+INF
+chip	chip[V]+V
+
+on	on[PRP]
+on	on[ADV]+ADV
+on	on[N]+N
+on	on[ADJ]
+on	on[ADJ]+ADJ
+
+their	they[DET]+GEN
+
+shoulder	shoulder[N]+N
+shoulder	shoulder[V]+V+INF
+shoulder	shoulder[V]+V
+shoulder	should[V]+ER[V/N]+N
+
+.	.[PUN]
+
+To	To[PART]+INF
+To	To[PRP]
+To	To[N]+N
+To	T[N]+O[N/N]+N
+
+listen	listen[V]+V+INF
+listen	listen[V]+V
+listen	listen[N]+N
+
+to	to[PART]+INF
+to	to[PRP]
+to	to[N]+N
+to	t[N]+O[N/N]+N
+
+you	you[PN]+PERS
+you	you[N]+N
+
+,	,[PUN]
+
+one	one[ADJ]
+one	one[PN]+INDEF
+one	one[V]+V+INF
+one	one[ADJ]+ADJ
+one	one[N]+N
+one	one[PN]
+
+might	might[V]+V+INF
+might	might[N]+N
+
+think	think[V]+V
+think	think[V]+V+INF
+think	think[N]+N
+
+we	we[PN]+PERS
+we	we[N]+N
+
+belonged	belong[V]+V+PAST
+belonged	belong[V]+V+PPART
+
+to	to[PART]+INF
+to	to[PRP]
+to	to[N]+N
+to	t[N]+O[N/N]+N
+
+some	some[DET]
+some	some[ADJ]+ADJ
+some	some[ADV]+ADV
+
+church	church[N]+N
+church	church[V]+V+INF
+
+!	![PUN]
+
+I	I[PN]+PERS
+I	I[ADJ]
+I	I[N]+N
+I	I[ADJ]+ADJ
+
+appreciate	appreciate[V]+V+INF
+appreciate	appreciate[V]+V
+
+the	the[ART]
+the	the[N]+N
+the	the[DET]
+
+patience	patience[N]+N
+
+of	of[PRP]
+of	have[V]+V+INF
+of	of[ADV]+ADV
+
+others	other[N]+N+PL
+
+who	who[PN]+WH
+who	who[N]+N
+
+questioned	question[V]+V+PAST
+questioned	questioned[ADJ]+ADJ
+questioned	question[N]+ED[N/ADJ]+ADJ
+questioned	question[V]+V+PPART
+questioned	quest[V]+ION[V/N]+ED[N/ADJ]+ADJ
+
+your	you[DET]+GEN
+
+posting	posting[N]+N
+posting	post[V]+V+PROG
+posting	post[N]+ING[N/N]+N
+posting	POST+y[N]+ING[N/N]+N
+
+on	on[PRP]
+on	on[ADV]+ADV
+on	on[N]+N
+on	on[ADJ]
+on	on[ADJ]+ADJ
+
+a	a[ART]
+a	a[N]+N
+a	a[PART]+INF
+a	a[PRP]
+a	a[ADV]+ADV
+a	a[PN]+PERS
+
+line-by-line	line-by-line[ADJ]+ADJ
+line-by-line	line-by-line[N]+N
+
+content	content[N]+N
+content	content[ADJ]+ADJ
+content	content[V]+V+INF
+content	content[V]+V
+
+basis	basis[N]+N
+
+,	,[PUN]
+
+though	though[CNJ]+SUBORD
+though	though[ADV]+ADV
+
+it'	it'[PN]+PERS
+it'	it'[V]+V
+it'	it'[V]+V+INF
+it'	it'[N]+N
+
+s	s[N]+N
+s	s[V]+V+3sg+PRES
+
+hard	hard[ADJ]+ADJ
+hard	hard[ADV]+ADV
+hard	hard[N]+N
+
+to	to[PART]+INF
+to	to[PRP]
+to	to[N]+N
+to	t[N]+O[N/N]+N
+
+know	know[V]+V
+know	know[V]+V+INF
+know	know[N]+N
+
+what	what[DET]+WH
+
+impact	impact[N]+N
+impact	impact[V]+V+INF
+impact	impact[V]+V
+impact	IN+pact[N]+N
+
+that	that[CNJ]+THAT
+that	that[DET]
+that	that[ADV]+ADV
+that	that[PRP]
+that	that[N]+N
+that	that[V]+V
+
+might	might[V]+V+INF
+might	might[N]+N
+
+have	have[V]+V+INF
+have	have[N]+N
+
+had	have[V]+V+PAST
+had	have[V]+V+PPART
+had	have+V+PAST
+had	have+V+PPART
+
+,	,[PUN]
+
+as	as[CNJ]+SUBORD
+as	as[PRP]
+as	as[ADV]+ADV
+as	as[N]+N
+as	as[V]+V+3sg+PRES
+as	a[N]+N+PL
+as	A+s[N]+N
+
+compared	compare[V]+V+PPART
+compared	compared[ADJ]+ADJ
+compared	compare[N]+ED[N/ADJ]+ADJ
+compared	compare[V]+V+PAST
+
+to	to[PART]+INF
+to	to[PRP]
+to	to[N]+N
+to	t[N]+O[N/N]+N
+
+,	,[PUN]
+
+say	say[V]+V+INF
+say	say[V]+V
+say	say[N]+N
+say	sa[N]+Y[N/ADJ]+ADJ
+
+,	,[PUN]
+
+shovelling	shovel[N]+ING[N/N]+N
+shovelling	shovel[N]+LING[N/N]+N
+shovelling	shovel[V]+V+PROG
+
+.	.[PUN]
+
+Fact	Fact[N]+N
+
+:	:[PUN]
+
+If	If[CNJ]+SUBORD
+If	If[N]+N
+
+he	he[PN]+PERS
+he	he[ART]
+he	he[N]+N
+
+were	be[V]+V+PAST
+were	be+V+PAST
+were	were[CNJ]+SUBORD
+
+truly	truly[ADV]+ADV
+
+interested	interested[ADJ]+ADJ
+interested	interest[V]+V+PAST
+interested	interest[V]+V+PPART
+interested	interest[N]+ED[N/ADJ]+ADJ
+interested	INTER+est[N]+ED[N/ADJ]+ADJ
+
+in	in[PRP]
+in	in[ADV]+ADV
+in	in[V]+V+3sg+PRES
+in	in[N]+N
+in	in[ADJ]+ADJ
+
+ending	ending[N]+N
+ending	end[N]+ING[N/N]+N
+ending	end[V]+V+PROG
+ending	EN+ding[V]+V+INF
+ending	EN+dy[N]+ING[N/N]+N
+ending	EN+d[N]+ING[N/N]+N
+
+the	the[ART]
+the	the[N]+N
+the	the[DET]
+
+thread	thread[N]+N
+thread	thread[V]+V
+thread	thread[V]+V+INF
+
+he	he[PN]+PERS
+he	he[ART]
+he	he[N]+N
+
+wouldn't	wouldn't[V]+V
+wouldn't	wouldn't[N]+N
+wouldn't	wouldn't[V]+V+INF
+
+have	have[V]+V+INF
+have	have[N]+N
+
+posted	post[V]+V+PPART
+posted	posted[ADJ]+ADJ
+posted	post[N]+ED[N/ADJ]+ADJ
+posted	post[V]+V+PAST
+posted	POST+d[ADJ]+ADJ
+posted	POST+d[N]+N
+posted	POST+ed[N]+N
+
+his	he[DET]+GEN
+his	his[PN]+PERS
+his	his+N+PL
+
+last	last[ADJ]
+last	last[V]+V+INF
+last	last[V]+V
+last	last[N]+N
+last	last[ADJ]+ADJ
+last	last[ADV]+ADV
+
+shit	shit[N]+N
+shit	shit[V]+V+INF
+shit	shit[V]+V
+
+to	to[PART]+INF
+to	to[PRP]
+to	to[N]+N
+to	t[N]+O[N/N]+N
+
+be	be[V]+V+INF
+be	be[V]+V+PRES
+be	be[N]+N
+
+shoveled	shovel[N]+ED[N/ADJ]+ADJ
+shoveled	shovel[V]+V+PAST
+shoveled	shovel[V]+V+PPART
+
+.	.[PUN]
+
+I	I[ADJ]
+I	I[N]+N
+I	I[PN]+PERS
+I	I[ADJ]+ADJ
+
+think	think[V]+V
+think	think[V]+V+INF
+think	think[N]+N
+
+I	I[PN]+PERS
+I	I[N]+N
+I	I[ADJ]
+I	I[ADJ]+ADJ
+
+only	only[ADV]+ADV
+only	only[ADJ]+ADJ
+only	only[CNJ]+SUBORD
+only	only[N]+N
+only	on[ADJ]+LY[ADJ/ADV]+ADV
+
+lamented	lamented[ADJ]+ADJ
+lamented	lament[N]+ED[N/ADJ]+ADJ
+lamented	lament[V]+V+PAST
+lamented	lament[V]+V+PPART
+
+that	that[CNJ]+THAT
+that	that[DET]
+that	that[ADV]+ADV
+that	that[PRP]
+that	that[N]+N
+that	that[V]+V
+
+,	,[PUN]
+
+whatever	whatever[DET]+WH
+whatever	whatever[ADJ]+ADJ
+
+the	the[ART]
+the	the[N]+N
+the	the[DET]
+
+initial	initial[ADJ]+ADJ
+initial	initial[N]+N
+initial	initial[V]+V+INF
+initial	initial[V]+V
+
+satisfactions	satisfaction[N]+N+PL
+
+,	,[PUN]
+
+past	past[N]+N
+past	past[ADJ]+ADJ
+past	past[PRP]
+past	past[ADV]+ADV
+
+a	a[ART]
+a	a[N]+N
+a	a[PART]+INF
+a	a[PRP]
+a	a[ADV]+ADV
+a	a[PN]+PERS
+
+certain	certain[ADJ]+ADJ
+
+point	point[N]+N
+point	point[V]+V+INF
+point	point[V]+V
+
+circular	circular[ADJ]+ADJ
+circular	circular[N]+N
+
+abuse	abuse[N]+N
+abuse	abuse[V]+V+INF
+abuse	abuse[V]+V
+abuse	AB+use[N]+N
+abuse	AB+use[V]+V+INF
+
+-	-[PUN]
+
+heaping	heap[N]+ING[N/N]+N
+heaping	heap[V]+V+PROG
+
+was	be[V]+V+PAST
+was	be+V+PAST
+was	wa[N]+N+PL
+
+just	just[ADV]+ADV
+just	just[ADJ]+ADJ
+just	just[N]+N
+
+that	that[CNJ]+THAT
+that	that[DET]
+that	that[ADV]+ADV
+that	that[PRP]
+that	that[N]+N
+that	that[V]+V
+
+.	.[PUN]
+
+Bake	Bake[V]+V
+Bake	Bake[V]+V+INF
+
+Timmons	Timmons[N]+N
+
+,	,[PUN]
+
+III	III[ADJ]
+III	III[ADJ]+ADJ
+III	III[N]+N
+
+...	...[PUN]
+
+there's	there[N]+N+GEN
+
+nothing	nothing[PN]+INDEF
+nothing	nothing[ADV]+ADV
+nothing	nothing[N]+N
+
+higher	high[ADV]+ADV
+higher	higher[ADJ]+ADJ
+higher	high[ADJ]+ADJ+COMP
+
+,	,[PUN]
+
+stronger	strong[ADJ]+ADJ+COMP
+stronger	strong+ADJ+COMP
+
+,	,[PUN]
+
+more	more[ADV]+ADV
+more	more[DET]
+more	more[ADJ]+ADJ
+more	more[N]+N
+
+wholesome	wholesome[ADJ]+ADJ
+
+and	and[CNJ]+COORD
+and	and[ADV]+ADV
+and	A+nd[N]+N
+
+more	more[ADV]+ADV
+more	more[DET]
+more	more[ADJ]+ADJ
+more	more[N]+N
+
+useful	useful[ADJ]+ADJ
+useful	use[N]+FUL[N/ADJ]+ADJ
+
+in	in[PRP]
+in	in[ADV]+ADV
+in	in[V]+V+3sg+PRES
+in	in[N]+N
+in	in[ADJ]+ADJ
+
+life	life[N]+N
+life	life[V]+V+INF
+
+than	than[CNJ]+SUBORD
+than	th[N]+AN[N/N]+N
+
+some	some[DET]
+some	some[ADJ]+ADJ
+some	some[ADV]+ADV
+
+good	good[ADJ]+ADJ
+good	good[N]+N
+good	good[ADV]+ADV
+
+memory	memory[N]+N
+
+...	...[PUN]
+
+-	-[PUN]
+
+-	-[PUN]
+
+Alyosha	+?
+
+in	in[PRP]
+in	in[ADV]+ADV
+in	in[V]+V+3sg+PRES
+in	in[N]+N
+in	in[ADJ]+ADJ
+
+Brothers	Brother+N+PL
+Brothers	Brother[N]+N+PL
+
+Karamazov	Karamazov[N]+N
+
+Dostoevsky	Dostoevsky[N]+N
+
+Sincere	Sincere[ADJ]+ADJ
+
+questions	question[N]+N+PL
+questions	question[V]+V+3sg+PRES
+questions	quest[V]+ION[V/N]+N+PL
+
+:	:[PUN]
+
+Why	Why[ADV]+ADV+WH
+Why	Why[ADV]+ADV
+Why	Why[N]+N
+
+are	be[V]+V+PRES
+are	are[N]+N
+are	A+re[N]+N
+
+you	you[PN]+PERS
+you	you[N]+N
+
+here	here[ADV]+ADV
+here	here[N]+N
+here	here[V]+V+INF
+here	here[V]+V
+here	here[ADJ]+ADJ
+
+?	?[PUN]
+
+What	What[DET]+WH
+
+are	be[V]+V+PRES
+are	are[N]+N
+are	A+re[N]+N
+
+you	you[PN]+PERS
+you	you[N]+N
+
+looking	look[V]+V+PROG
+looking	looking[ADJ]+ADJ
+looking	looking[N]+N
+looking	look[N]+ING[N/N]+N
+
+for	for[PRP]
+for	for[CNJ]+SUBORD
+for	for[ADV]+ADV
+for	for[N]+N
+
+?	?[PUN]
+
+Jim	Jim[N]+N
+
