@@ -2,9 +2,6 @@ import nltk
 
 train_neg = open("train_neg.txt", "rb")
 
-# perl -pi -e 's/[[:^ascii:]]//g' train_neg.txt
-# sed -i -e 's/\(.*\)/\L\1/' train_neg.txt
-
 #store the docs in a list
 document = train_neg.readlines()
 #removing the extra newline character in every dcoument and word
@@ -23,6 +20,7 @@ for word in vocab:
 count = 0
 bBoWs = []
 
+#creating vector representations for documents
 for doc in document:
 	document[count] = nltk.word_tokenize(doc)
 	doc = document[count]
