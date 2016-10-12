@@ -10,3 +10,6 @@ sed -i -e 's/\(.*\)/\L\1/' train_neg.txt
 sed -i -e 's/\(.*\)/\L\1/' train_pos.txt
 sed -i -e 's/\(.*\)/\L\1/' test_neg.txt
 sed -i -e 's/\(.*\)/\L\1/' test_pos.txt
+
+mkdir BoW
+mkdir w2v

@@ -1,9 +1,24 @@
+from __future__ import division
 import nltk
+import gensim
+import sys
+import numpy as np
+import pickle
 
-train_neg = open("train_neg.txt", "rb")
+if len(sys.argv) < 2:
+	print "Please input file name"
+	sys.exit(0)
+if len(sys.argv) > 3:
+	print "Too many arguments"
+	sys.exit(0)
+
+file_name = sys.argv[1]
+print file_name
+
+file_name = open("test_neg.txt", "rb")
 
 #store the docs in a list
-document = train_neg.readlines()
+document = file_name.readlines()
 #removing the extra newline character in every dcoument and word
 document = [x[:-1] for x in document]
 
@@ -18,7 +33,8 @@ for word in vocab:
 	count = count + 1
 
 count = 0
-bBoWs = []
+
+bBoW_file = open("bBoW/"+file_name+".bBoW", "wb")
 
 #creating vector representations for documents
 for doc in document:
@@ -34,13 +50,11 @@ for doc in document:
 				current_BoW[key_location] = 1
 				break
 			key_location = key_location + 1
-	bBoWs.append(current_BoW)
+	pickle.dump(current_BoW, bBoW_file)
+
+	# file.write("%s\n" % current_BoW)
 
 # print bBoWs[0][6]
-
-file = open("train_neg.bBoW", "wb")
-for item in bBoWs:
-	file.write("%s\n" % item)
 
 # for doc in document:
 # 	document[count] = nltk.word_tokenize(doc)
