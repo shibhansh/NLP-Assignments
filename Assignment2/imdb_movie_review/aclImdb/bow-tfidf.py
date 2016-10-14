@@ -43,10 +43,10 @@ document_tf_idf = document_tf_idf.toarray()
 
 print "_________________saving in files_________________"
 
-file_train_neg_bow = open("BoW_tf-idf/"+file_train_neg.name+".BoW", "wb") 
-file_train_pos_bow = open("BoW_tf-idf/"+file_train_pos.name+".BoW", "wb")
-file_test_neg_bow = open("BoW_tf-idf/"+file_test_neg.name+".BoW", "wb")
-file_test_pos_bow = open("BoW_tf-idf/"+file_test_pos.name+".BoW", "wb")
+file_train_neg_bow = open("BoW/"+file_train_neg.name+".BoW", "wb") 
+file_train_pos_bow = open("BoW/"+file_train_pos.name+".BoW", "wb")
+file_test_neg_bow = open("BoW/"+file_test_neg.name+".BoW", "wb")
+file_test_pos_bow = open("BoW/"+file_test_pos.name+".BoW", "wb")
 
 for i in range(0,documents_to_use):
 	pickle.dump(document_tf_idf[0*documents_to_use+i],file_train_neg_bow)
@@ -67,3 +67,5 @@ for i in range(0,documents_to_use):
 	pickle.dump(document_tf_idf[3*documents_to_use+i],file_test_pos_bow)
 	print i
 print "________________saved pos testing data_____________"	
+
+# accuracy: 0.872150

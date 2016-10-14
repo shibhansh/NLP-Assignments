@@ -2,20 +2,27 @@ from __future__ import division
 import numpy as np
 import pickle
 from sklearn import svm
+import sys
+if len(sys.argv) < 2:
+	print "Please input the name of directory"
+	sys.exit(0)
+if len(sys.argv) > 3:
+	print "Too many arguments"
+	sys.exit(0)
 
-with open("bBoW/pca/train_neg.txt.pca", 'rb') as file:
+with open(sys.argv[1] + "/pca/train_neg.txt.pca", 'rb') as file:
 	list_train_neg = pickle.load(file)
 print "_________loaded negative train file___________"
 
-with open("bBoW/pca/train_pos.txt.pca", 'rb') as file:
+with open(sys.argv[1] + "/pca/train_pos.txt.pca", 'rb') as file:
 	list_train_pos = pickle.load(file)
 print "_________loaded positive train file___________"
 
-with open("bBoW/pca/test_neg.txt.pca", 'rb') as file:
+with open(sys.argv[1] + "/pca/test_neg.txt.pca", 'rb') as file:
 	list_test_neg = pickle.load(file)
 print "__________loaded negative test file___________"
 
-with open("bBoW/pca/test_pos.txt.pca", 'rb') as file:
+with open(sys.argv[1] + "/pca/test_pos.txt.pca", 'rb') as file:
 	list_test_pos = pickle.load(file)
 print "__________loaded positive test file___________"
 
@@ -62,4 +69,3 @@ for i in range(0,len(result_test_pos)):
 		count = count+1
 
 print "accuracy: %f"  % ( count/(len(list_test_pos)+len(list_test_neg)))
-# accuracy: 0.587063

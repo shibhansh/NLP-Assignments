@@ -41,9 +41,6 @@ for line in lines_file:
 	# average over all the words of the document
 	temp = temp/current_doc_word_count
 	w2v_represenations.append(temp)
-# write this in file
 pickle.dump(w2v_represenations, w2v_file)
 
-# 		# To read:
-# 		# with open(the_filename, 'rb') as file:
-# 		# my_list = pickle.load(file)	
+# accuracy: 0.587063
