@@ -26,6 +26,11 @@ vocabulary = open("imdb.vocab", "rb")
 vocab = vocabulary.readlines()
 vocab = [x[:-1] for x in vocab]
 
+stop_words = vocab[0:100]
+# for doc in document:
+# 	for word in doc:
+# 		if word.lower() not in stop_words:
+
 count = 0
 
 bBoW_file = open("bBoW/"+file_name+".bBoW", "wb")
@@ -39,6 +44,8 @@ for doc in document:
 	count = count + 1
 	current_BoW = [0]*30000
 	for word in doc:
+		if word in stop_words:
+			continue
 		key_location = 0
 		for key in vocab:
 			if key == word:
@@ -49,17 +56,4 @@ for doc in document:
 				break
 	pickle.dump(current_BoW, bBoW_file)
 
-	# file.write("%s\n" % current_BoW)
-
-# print bBoWs[0][6]
-
-# for doc in document:
-# 	document[count] = nltk.word_tokenize(doc)
-# 	doc = document[count]
-# 	print count
-# 	count = count + 1
-# 	current_BoW = [0]*len(vocab)
-# 	for word in doc:
-# 		if word in dictionary.keys():
-# 			current_BoW[dictionary[word]] = 1
-# 	bBoWs.append(current_BoW)
+# accuracy: 0.861709

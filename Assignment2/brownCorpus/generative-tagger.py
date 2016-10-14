@@ -4,7 +4,6 @@ from nltk.corpus import brown
 
 print "_______________________imported corpus_____________________________"
 brown_tagged_sents = brown.tagged_sents()
-brown_sents = brown.sents()
 
 size = int(len(brown_tagged_sents) * 0.9)
 train_sents = brown_tagged_sents[:size]

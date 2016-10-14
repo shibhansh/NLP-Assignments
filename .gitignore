@@ -1,6 +1,7 @@
 *.bBoW
 *.w2v
 *.bin
+*.pca
 test_neg.bBoW
 train_pos.bBoW
 test_pos.bBoW

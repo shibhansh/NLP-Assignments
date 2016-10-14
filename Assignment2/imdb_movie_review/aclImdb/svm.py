@@ -3,19 +3,19 @@ import numpy as np
 import pickle
 from sklearn import svm
 
-with open("w2v/train_neg.txt.w2v", 'rb') as file:
+with open("bBoW/pca/train_neg.txt.pca", 'rb') as file:
 	list_train_neg = pickle.load(file)
 print "_________loaded negative train file___________"
 
-with open("w2v/train_pos.txt.w2v", 'rb') as file:
+with open("bBoW/pca/train_pos.txt.pca", 'rb') as file:
 	list_train_pos = pickle.load(file)
 print "_________loaded positive train file___________"
 
-with open("w2v/test_neg.txt.w2v", 'rb') as file:
+with open("bBoW/pca/test_neg.txt.pca", 'rb') as file:
 	list_test_neg = pickle.load(file)
 print "__________loaded negative test file___________"
 
-with open("w2v/test_pos.txt.w2v", 'rb') as file:
+with open("bBoW/pca/test_pos.txt.pca", 'rb') as file:
 	list_test_pos = pickle.load(file)
 print "__________loaded positive test file___________"
 
