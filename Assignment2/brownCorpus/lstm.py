@@ -1,61 +1,114 @@
 #import nltk and the corpus
 import nltk
+import pickle
 from nltk.corpus import brown
 import numpy as np
-
+import tensorflow as tf
+import gensim
 print "_______________________imported corpus_____________________________"
 #getting the tagged words
 brown_tagged_words = brown.tagged_words()
-
 #getting the tagged sentences
 brown_tagged_sentences = brown.tagged_sents()
 
-size = int(len(brown_tagged_sents) * 0.9)
-train_sents = brown_tagged_sents[:size]
-test_sents = brown_tagged_sents[size:]
+from collections import defaultdict
+counts = defaultdict(int)
+from nltk.corpus import brown
+for (word, tag) in brown.tagged_words():
+	counts[tag] += 1
 
-import keras.backend as K
-from keras.layers import LSTM, Input
+keys = []
+for key in counts:
+	keys.append(key)
 
-I = Input(shape=(None, 200)) # unknown timespan, fixed feature size
-lstm = LSTM(20)
+count = 0
+train_output =[]
+for sent in brown_tagged_sentences[:]:
+	current_tag_sequence = []
+	for word in sent:
+		temp = np.zeros(len(keys))
+		temp[keys.index(word[1])] = 1
+		current_tag_sequence.append(temp)
+	train_output.append(current_tag_sequence)
+	count = count + 1
+	print count
+
+file_name = 'brown_tags.onehot'
+file = open(file_name,"wb")
+# pickle.dump(train_output,file)
+
+print "_____________________now loading google w2v_________________________"
+model = gensim.models.Word2Vec.load_word2vec_format('/data/gpuuser2/Downloads/GoogleNews-vectors-negative300.bin', binary=True)
+print "_____________________done loading word2vec__________________________"
+
+file_name = 'brown_corpus'
+w2v_file = open(file_name+".w2v", "wb")
+print "___________________created file for w2v________________________"
+
+count = 0
+train_input = []
+# train_input = brown_sents
+for sent in brown.sents():
+	current_sent_w2v = []
+	for word in sent:
+		if word in model.vocab:
+			current_sent_w2v.append(model[word])
+		else:
+			current_sent_w2v.append(np.zeros(300))
+	# pickle.dump(current_sent_w2v,w2v_file)
+	train_input.append(current_sent_w2v)
+	count = count + 1
+	print count
+
+no_of_tags = len(keys)
+
+data = tf.placeholder(tf.float32, [1 ,None,300])
+target = tf.placeholder(tf.float32, [1, None, no_of_tags])
+
+num_hidden = 50
+cell = tf.nn.rnn_cell.LSTMCell(num_hidden,state_is_tuple=True)
+
+val, state = tf.nn.dynamic_rnn(cell, data, dtype=tf.float32)
+# val = tf.transpose(val, [1, 0, 2])
+
+weight = tf.Variable(tf.truncated_normal([num_hidden,no_of_tags]),tf.float32)
+
+bias = tf.Variable(tf.constant(0.1, shape=[no_of_tags]))
 
 
-keras.layers.recurrent.LSTM(output_dim, init='glorot_uniform', inner_init='orthogonal', forget_bias_init='one', activation='tanh', inner_activation='hard_sigmoid', W_regularizer=None, U_regularizer=None, b_regularizer=None, dropout_W=0.0, dropout_U=0.0)
 
 
 
+prediction = tf.nn.softmax(tf.matmul(val[0][:], weight) + bias)
+
+cross_entropy = -tf.reduce_sum(target * tf.log(prediction))
+
+optimizer = tf.train.AdamOptimizer()
+minimize = optimizer.minimize(cross_entropy)
+
+mistakes = tf.not_equal(tf.argmax(target, 1), tf.argmax(prediction, 1))
+
+error = tf.reduce_mean(tf.cast(mistakes, tf.float32))
+
+init_op = tf.initialize_all_variables()
+sess = tf.Session()
+sess.run(init_op)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-f = K.function(inputs=[I], outputs=[lstm(I)])
-
-
-data1 = np.random.random(size=(1, 100, 200)) # batch_size = 1, timespan = 100
-print f([data1])[0].shape
-# (1, 20)
-
-data2 = np.random.random(size=(1, 314, 200)) # batch_size = 1, timespan = 314
-print f([data2])[0].shape
-# (1, 20)
-
+batch_size = 1
+no_of_batches = len(brown.sents())
+epoch = 500
+for i in range(epoch):
+	ptr = 0
+	for j in range(no_of_batches):
+		inp = train_input[ptr:ptr+batch_size]
+		out = train_output[ptr:ptr+batch_size]
+		temp = np.empty([1,len(out[0]),472],dtype = int)
+		temp[0][:][:] = out[0]
+		out = temp
+		ptr+=batch_size
+		sess.run(minimize,{data: inp, target: out})
+	print "Epoch - ",str(i)
+incorrect = sess.run(error,{data: test_input, target: test_output})
+print('Epoch {:2d} error {:3.1f}%'.format(i + 1, 100 * incorrect))
+sess.close()
