@@ -4,3 +4,7 @@
 *.pca
 *.BoW
 *.onehot
+*.w2v_self
+*.w2v_google
+brown_model
+imdb_model

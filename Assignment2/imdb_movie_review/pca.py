@@ -5,15 +5,9 @@ import os
 import shutil
 from sklearn.decomposition import PCA
 
-if len(sys.argv) < 2:
-	print "Please input file types"
-	sys.exit(0)
-if len(sys.argv) > 3:
-	print "Too many arguments"
-	sys.exit(0)
-
-directory = sys.argv[1]
-print directory
+new_dimensions = 300
+directory = raw_input("Input the name of directory to prpcess: ")
+new_dimensions = int(raw_input("Please input the dimension of the vectors after PCA: "))
 
 os.chdir(directory)
 
@@ -50,7 +44,7 @@ for i in range(0,vectors_to_load):
 print "__________________________data loaded______________________________"
 
 print "_____________________________fitting_______________________________"
-pca = PCA(n_components=300)
+pca = PCA(n_components=new_dimensions)
 pca.fit(X)
 
 print "___________________________transforming____________________________"
