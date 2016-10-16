@@ -54,7 +54,7 @@ for i in range(0,documents_to_use):
 print "________________saved neg training data_____________"
 
 for i in range(0,documents_to_use):
-	pickle.dump(document_tf_idf[documents_to_use+i],file_train_pos_bow)
+	pickle.dump(document_tf_idf[1*documents_to_use+i],file_train_pos_bow)
 	print i
 print "________________saved pos training data_____________"
 

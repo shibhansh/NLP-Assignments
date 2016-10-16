@@ -5,9 +5,11 @@ import os
 import shutil
 from sklearn.decomposition import PCA
 
+vectors_to_load = 12499
 new_dimensions = 300
 directory = raw_input("Input the name of directory to prpcess: ")
-new_dimensions = int(raw_input("Please input the dimension of the vectors after PCA: "))
+new_dimensions = int(raw_input("Input the dimension of the vectors after PCA: "))
+vectors_to_load = int(raw_input("Input the no. of documents to use in each file: "))
 
 os.chdir(directory)
 
@@ -32,7 +34,6 @@ print "______________________created file for pca_________________________"
 
 print "__________________________loading data_____________________________"
 X = []
-vectors_to_load = 12499
 for i in range(0,vectors_to_load):
 	X.append(pickle.load(file_train_pos))
 for i in range(0,vectors_to_load):
