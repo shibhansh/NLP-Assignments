@@ -71,3 +71,5 @@ for file in files:
 					break
 		pickle.dump(current_BoV, file)
 	current_file_number += 1
+
+# accuracy: 0.585000

@@ -77,3 +77,5 @@ for file in files:
 		pickle.dump(current_BoV, file)
 		documents_processed = documents_processed + 1
 	current_file_number += 1
+
+# accuracy: 0.500000

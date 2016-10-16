@@ -9,3 +9,5 @@
 *.BoV
 brown_model
 imdb_model
+*.w2v
+*.BoV_tf-idf

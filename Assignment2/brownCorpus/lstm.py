@@ -38,7 +38,7 @@ file = open(file_name,"wb")
 # pickle.dump(train_output,file)
 
 print "_____________________now loading google w2v_________________________"
-model = gensim.models.Word2Vec.load_word2vec_format('/data/gpuuser2/Downloads/GoogleNews-vectors-negative300.bin', binary=True)
+model = gensim.models.Word2Vec.load('brown_model')
 print "_____________________done loading word2vec__________________________"
 
 file_name = 'brown_corpus'
@@ -61,20 +61,13 @@ for sent in brown.sents():
 	print count
 
 no_of_tags = len(keys)
-
+num_hidden = 50
 data = tf.placeholder(tf.float32, [1 ,None,300])
 target = tf.placeholder(tf.float32, [1, None, no_of_tags])
-
-num_hidden = 50
-cell = tf.nn.rnn_cell.LSTMCell(num_hidden,state_is_tuple=True)
-
 val, state = tf.nn.dynamic_rnn(cell, data, dtype=tf.float32)
-# val = tf.transpose(val, [1, 0, 2])
-
 weight = tf.Variable(tf.truncated_normal([num_hidden,no_of_tags]),tf.float32)
-
 bias = tf.Variable(tf.constant(0.1, shape=[no_of_tags]))
-
+cell = tf.nn.rnn_cell.LSTMCell(num_hidden,state_is_tuple=True)
 
 max_length = target.get_shape()[1]
 num_classes = target.get_shape()[2]
@@ -83,23 +76,16 @@ output = tf.reshape(output, [-1, self._num_hidden])
 prediction = tf.nn.softmax(tf.matmul(output, weight) + bias)
 prediction = tf.reshape(prediction, [-1, max_length, num_classes])
 
-
-
 prediction = tf.nn.softmax(tf.matmul(val[0][:], weight) + bias)
-
 cross_entropy = -tf.reduce_sum(target * tf.log(prediction))
-
 optimizer = tf.train.AdamOptimizer()
 minimize = optimizer.minimize(cross_entropy)
-
 mistakes = tf.not_equal(tf.argmax(target, 1), tf.argmax(prediction, 1))
-
 error = tf.reduce_mean(tf.cast(mistakes, tf.float32))
 
 init_op = tf.initialize_all_variables()
 sess = tf.Session()
-sess.run(init_op)
-
+sess.run(init_op)	
 
 batch_size = 1
 no_of_batches = len(brown.sents())

@@ -7,7 +7,7 @@ print "_______________________imported corpus_____________________________"
 brown_tagged_words = brown.tagged_words()
 
 #distributing the data in test and train set
-no_of_words = int(len(brown_tagged_words) * 0.9)
+no_of_words = int(len(brown_tagged_words) * 0.8)
 train_words = brown_tagged_words[:no_of_words]
 
 #due to the format of evaluation of nltk
