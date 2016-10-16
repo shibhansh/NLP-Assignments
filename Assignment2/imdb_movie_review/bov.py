@@ -53,9 +53,7 @@ keys_found = 0
 documents_processed = 0
 for file in files:
 	for doc in corpus[ current_file_number*number_of_documents : (current_file_number+1)*number_of_documents]:
-		print "here"
 		temp = doc
-		# print temp
 		doc = nltk.word_tokenize(temp)
 		print("Documents Processed %d, remaining %d" % (documents_processed, 4*number_of_documents-documents_processed))
 		documents_processed = documents_processed + 1

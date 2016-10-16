@@ -7,7 +7,7 @@ from sklearn.decomposition import PCA
 
 vectors_to_load = 12499
 new_dimensions = 300
-directory = raw_input("Input the name of directory to prpcess: ")
+directory = raw_input("Input the name of directory to process: ")
 new_dimensions = int(raw_input("Input the dimension of the vectors after PCA: "))
 vectors_to_load = int(raw_input("Input the no. of documents to use in each file: "))
 

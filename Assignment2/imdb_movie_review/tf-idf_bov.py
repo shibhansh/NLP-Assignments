@@ -6,6 +6,8 @@ import sys
 import os
 import shutil
 import gensim
+from sklearn.feature_extraction.text import TfidfVectorizer
+
 
 file_train_neg = open("train_neg.txt", "rb")
 file_train_pos = open("train_pos.txt", "rb")
@@ -42,26 +44,23 @@ model = gensim.models.Word2Vec.load('imdb_model')
 print "_____________________done loading word2vec__________________________"
 
 #making files to save data in
-file_train_neg_bov = open("BoV/"+file_train_neg.name+".BoV", "wb") 
-file_train_pos_bov = open("BoV/"+file_train_pos.name+".BoV", "wb")
-file_test_neg_bov = open("BoV/"+file_test_neg.name+".BoV", "wb")
-file_test_pos_bov = open("BoV/"+file_test_pos.name+".BoV", "wb")
+file_train_neg_bov_tf_idf = open("BoV_tf-idf/"+file_train_neg.name+".BoV_tf-idf", "wb") 
+file_train_pos_bov_tf_idf = open("BoV_tf-idf/"+file_train_pos.name+".BoV_tf-idf", "wb")
+file_test_neg_bov_tf_idf = open("BoV_tf-idf/"+file_test_neg.name+".BoV_tf-idf", "wb")
+file_test_pos_bov_tf_idf = open("BoV_tf-idf/"+file_test_pos.name+".BoV_tf-idf", "wb")
 
 print "_______________converting to tf-idf_______________"
 vect = TfidfVectorizer(sublinear_tf=True, max_df=0.5, analyzer='word', stop_words='english', vocabulary=vocab)
-document_tf_idf = vect.fit_transform(document)
+document_tf_idf = vect.fit_transform(corpus)
 document_tf_idf = document_tf_idf.toarray()
 
 
-files = [file_train_neg_bov, file_train_pos_bov, file_test_neg_bov, file_test_pos_bov]
+files = [file_train_neg_bov_tf_idf, file_train_pos_bov_tf_idf, file_test_neg_bov_tf_idf, file_test_pos_bov_tf_idf]
 current_file_number = 0
-keys_found = 0
 documents_processed = 0
 for file in files:
 	for doc in corpus[ current_file_number*number_of_documents : (current_file_number+1)*number_of_documents]:
-		print "here"
 		temp = doc
-		# print temp
 		doc = nltk.word_tokenize(temp)
 		print("Documents Processed %d, remaining %d" % (documents_processed, 4*number_of_documents-documents_processed))
 		current_BoV = [0]*(vocab_size*50)
@@ -70,9 +69,8 @@ for file in files:
 			for key in vocab:
 				if key == word:
 					if word in model.vocab:
-						current_BoV[key_location*50:(key_location+1)*50] = model[word]*document_tf_idf[documents_processed][key]
-						keys_found +=1
-					break
+						current_BoV[key_location*50:(key_location+1)*50] = model[word]*document_tf_idf[documents_processed][key_location]
+						break
 				key_location = key_location + 1
 				if key_location >= vocab_size:
 					break

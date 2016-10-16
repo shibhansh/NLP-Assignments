@@ -76,6 +76,12 @@ weight = tf.Variable(tf.truncated_normal([num_hidden,no_of_tags]),tf.float32)
 bias = tf.Variable(tf.constant(0.1, shape=[no_of_tags]))
 
 
+max_length = target.get_shape()[1]
+num_classes = target.get_shape()[2]
+weight, bias = self._weight_and_bias(self._num_hidden, num_classes)
+output = tf.reshape(output, [-1, self._num_hidden])
+prediction = tf.nn.softmax(tf.matmul(output, weight) + bias)
+prediction = tf.reshape(prediction, [-1, max_length, num_classes])
 
 
 

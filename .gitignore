@@ -6,5 +6,6 @@
 *.onehot
 *.w2v_self
 *.w2v_google
+*.BoV
 brown_model
 imdb_model
