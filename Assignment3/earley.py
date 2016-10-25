@@ -1,62 +1,46 @@
 import copy
 
-terminals = ['book', 'I', 'she', 'me', 'TWA', 'Houston', 'flight', 'meal', 'money', 'include', 'prefer']
-non_terminals = ['root','S', 'NP', 'VP', 'X1', 'Aux', 'Verb', 'PP', 'Det', 'Nominal', 'X2', 'Preposition', 'Noun']
+terminals = ['this', 'that', 'a', 'book', 'flight' 'meal', 'money', 'prefer', 'does', 'from', 'to', 'on', 'Houston', 'TWA']
+non_terminals = ['root','S', 'NP', 'VP', 'Aux', 'Verb', 'Det', 'Nominal', 'Proper-Noun', 'Noun','Prep']
 grammar = {}
 grammar['root'] = [['S']]
-grammar['S'] =  [['NP', 'VP'], ['X1','VP'],['Verb','NP'],['X2','PP'], ['Verb','PP'], ['VP' ,'PP'],['book'], ['include'], ['prefer']]
-grammar['X1'] = [['Aux' 'NP']]
-grammar['NP'] = [['Det','Nominal'],['I'],['she'],['me'],['TWA'],['Houston']]
-grammar['Nominal'] = [['Nominal','Noun'], ['Nominal','PP'],['book'],['flight'],['meal'],['money']]
-grammar['VP'] = [['book'],['include'],['prefer'],['Verb','NP'],['X2','PP'],['Verb','PP'],['VP','PP']]
+grammar['S'] =  [['NP', 'VP'], ['Aux','NP', 'VP'],['VP']]
+grammar['NP'] = [['Det','Nominal'],['Proper-Noun']]
+grammar['Nominal'] = [['Noun'], ['Noun','Nominal'],['Nominal','Prep']]
+grammar['VP'] = [['Verb','NP'],['Verb']]
 grammar['X2'] = [['Verb','NP']]
 grammar['PP'] = [['Preposition', 'NP']]
+grammar['Det']= [['this'],['that'],['a']]
+grammar['Noun']= [['book'],['flight'],['meal'],['money']]
+grammar['Verb']= [['book'],['include'],['prefer']]
+grammar['Aux'] = [['does']]
+grammar['Prep']= [['from'],['to'],['on']]
+grammar['Proper-Noun'] = [['Houston'],['TWA']]
 POS = {}
-POS['book']	= ['S','Nominal','VP']
-POS['I']	= ['NP']
-POS['she']	= ['NP']
-POS['me']	= ['NP']
-POS['TWA']	= ['NP']
-POS['Houston']	= ['NP']
-POS['flight']	= ['Nominal']
-POS['meal']	= ['Nominal']
-POS['money']	= ['Nominal']
-POS['include']	= ['VP']
-POS['prefer']	= ['VP']
-sent = ['I','prefer']
+POS['book']	= ['Noun','Verb']
+POS['include'] = ['Verb']
+POS['prefer'] = ['Verb']
+POS['this']	= ['Det']
+POS['that']	= ['Det']
+POS['a']	= ['Det']
+POS['flight'] = ['Noun']
+POS['meal'] = ['Noun']
+POS['money'] = ['Noun']
+POS['TWA']	= ['Proper-Noun']
+POS['Houston']	= ['Proper-Noun']
+POS['does']		= ['Aux']
+POS['from']		= ['Prep']
+POS['to']		= ['Prep']
+POS['on']		= ['Prep']
 
-def earley_parser():
-	initial_state = ['root','.','S',[0,0]]
-	enqueue(initial_state,0)
-	for i in range(0,len(sent)+1):
-		print i
-		# To-do for all states of the
-		current_index_in_chart = 0
-		while current_index_in_chart != len(chart[i]):
-			# print len(chart),i, len(chart[i]), current_index_in_chart
-			state = chart[i][current_index_in_chart]
-			# print state
-			if incomplete(state):
-				# find the thing next to '.'
-				if state[state.index('.')+1] in terminals:
-					scanner(state)
-				else :
-					predictor(state)
-			else :
-				completer(state)
-			current_index_in_chart += 1
-
+sent = ['book','that','flight']
 def enqueue(state,chart_index):
 	found = False
 	for current_state in chart[chart_index]:
-		# if chart_index == 1:
-		# 	print state, current_state
 		if current_state == state:
 			found = True
 	if found == False:
 		chart[chart_index].append(state)
-		# print state
-
 def incomplete(state):
 	if state[len(state)-2] != '.':
 		return True
@@ -75,14 +59,6 @@ def predictor(state):
 			new_state.append([j,j])
 			enqueue(new_state, j)
 
-def scanner(state):
-	index_B = state.index('.')-1
-	B = state[index_B]
-	j = state[len(state)-1][1]
-	if j < len(sent):
-		if B in POS[sent[j]]:
-			enqueue([B,sent[j],'.',[j,j+1]],j+1)
-
 def completer(state):
 	j = state[len(state)-1][0]		#Note this 0
 	for current_state in chart[j]:
@@ -92,6 +68,34 @@ def completer(state):
 			new_state[current_state.index('.')+1] =	current_state[current_state.index('.')] 
 			new_state[len(new_state)-1][1] = state[len(state)-1][1]
 			enqueue(new_state,state[len(state)-1][1])
+
+def scanner(state):
+	index_B = state.index('.')-1
+	B = state[index_B]
+	j = state[len(state)-1][1]
+	if j < len(sent):
+		if B in POS[sent[j]]:
+			enqueue([B,sent[j],'.',[j,j+1]],j+1)
+
+
+def earley_parser():
+	initial_state = ['root','.','S',[0,0]]
+	enqueue(initial_state,0)
+	for i in range(0,len(sent)+1):
+		current_index_in_chart = 0
+		while current_index_in_chart != len(chart[i]):
+			state = chart[i][current_index_in_chart]
+			if incomplete(state):
+				# find the thing next to '.'
+				if state[state.index('.')+1] in terminals:
+					scanner(state)
+				else :
+					predictor(state)
+			else :
+				completer(state)
+			current_index_in_chart += 1
+
+
 
 # def backtrace()
 chart = [[] for i in range(0,len(sent)+1)]
