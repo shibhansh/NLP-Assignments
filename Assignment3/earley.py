@@ -1,31 +1,29 @@
 import copy
 
-terminals = ['Papa', 'ate', 'the', 'a', 'caviar', 'spoon', 'with']
-non_terminals = ['root','S', 'NP', 'VP','Verb', 'PP','Noun','Det','P']
+terminals = ['book', 'I', 'she', 'me', 'TWA', 'Houston', 'flight', 'meal', 'money', 'include', 'prefer']
+non_terminals = ['root','S', 'NP', 'VP', 'X1', 'Aux', 'Verb', 'PP', 'Det', 'Nominal', 'X2', 'Preposition', 'Noun']
 grammar = {}
 grammar['root'] = [['S']]
-grammar['S']	 =  [['NP', 'VP']]
-grammar['NP']	= [['Det','Noun'],['NP','PP'],['Papa']]
-grammar['VP']	 = [['VP','PP'],['Verb','NP']]
-grammar['PP']	 = [['P','NP']]
-grammar['Verb']	 = [['ate']]
-grammar['Det']	= [['the'],['a']]
-grammar['Noun'] = [['caviar'],['spoon']]
-grammar['P']	= [['with']]
-
-# First completely understand the algorithm and the re-implement
+grammar['S'] =  [['NP', 'VP'], ['X1','VP'],['Verb','NP'],['X2','PP'], ['Verb','PP'], ['VP' ,'PP'],['book'], ['include'], ['prefer']]
+grammar['X1'] = [['Aux' 'NP']]
+grammar['NP'] = [['Det','Nominal'],['I'],['she'],['me'],['TWA'],['Houston']]
+grammar['Nominal'] = [['Nominal','Noun'], ['Nominal','PP'],['book'],['flight'],['meal'],['money']]
+grammar['VP'] = [['book'],['include'],['prefer'],['Verb','NP'],['X2','PP'],['Verb','PP'],['VP','PP']]
+grammar['X2'] = [['Verb','NP']]
+grammar['PP'] = [['Preposition', 'NP']]
 POS = {}
-POS['Papa']		=	['NP']
-POS['ate']		=	['Verb']
-POS['the']		=	['Det']
-POS['a']		=	['Det']
-POS['caviar']	= 	['Noun']
-POS['spoon']	=	['Noun']
-POS['with']		=	['P']
-
-sent = ['Papa','ate','the','caviar','with','a','spoon']
-chart = [[] for i in range(0,len(sent)+1)]
-earley_parser()
+POS['book']	= ['S','Nominal','VP']
+POS['I']	= ['NP']
+POS['she']	= ['NP']
+POS['me']	= ['NP']
+POS['TWA']	= ['NP']
+POS['Houston']	= ['NP']
+POS['flight']	= ['Nominal']
+POS['meal']	= ['Nominal']
+POS['money']	= ['Nominal']
+POS['include']	= ['VP']
+POS['prefer']	= ['VP']
+sent = ['I','prefer']
 
 def earley_parser():
 	initial_state = ['root','.','S',[0,0]]
@@ -95,10 +93,9 @@ def completer(state):
 			new_state[len(new_state)-1][1] = state[len(state)-1][1]
 			enqueue(new_state,state[len(state)-1][1])
 
+# def backtrace()
 chart = [[] for i in range(0,len(sent)+1)]
 earley_parser()
-
-print chart
 
 count = 0
 for list_ in chart:
@@ -106,3 +103,29 @@ for list_ in chart:
 	for sub_list in list_:
 		print sub_list
 	count += 1
+
+
+
+# terminals = ['Papa', 'ate', 'the', 'a', 'caviar', 'spoon', 'with']
+# non_terminals = ['root','S', 'NP', 'VP','Verb', 'PP','Noun','Det','P']
+# grammar = {}
+# grammar['root'] = [['S']]
+# grammar['S']	 =  [['NP', 'VP']]
+# grammar['NP']	= [['Det','Noun'],['NP','PP'],['Papa']]
+# grammar['VP']	 = [['VP','PP'],['Verb','NP']]
+# grammar['PP']	 = [['P','NP']]
+# grammar['Verb']	 = [['ate']]
+# grammar['Det']	= [['the'],['a']]
+# grammar['Noun'] = [['caviar'],['spoon']]
+# grammar['P']	= [['with']]
+
+# # First completely understand the algorithm and the re-implement
+# POS = {}
+# POS['Papa']		=	['NP']
+# POS['ate']		=	['Verb']
+# POS['the']		=	['Det']
+# POS['a']		=	['Det']
+# POS['caviar']	= 	['Noun']
+# POS['spoon']	=	['Noun']
+# POS['with']		=	['P']
+# sent = ['Papa','ate','the','caviar','with','a','spoon']
