@@ -8,7 +8,18 @@ grammar['Nominal'] = [['Nominal','Noun'], ['Nominal','PP'],['book'],['flight'],[
 grammar['VP'] = [['book'],['include'],['prefer'],['Verb','NP'],['X2','PP'],['Verb','PP'],['VP','PP']]
 grammar['X2'] = [['Verb','NP']]
 grammar['PP'] = [['Preposition', 'NP']]
-
+POS = {}
+POS['book']	= ['S','Nominal','VP']
+POS['I']	= ['NP']
+POS['she']	= ['NP']
+POS['me']	= ['NP']
+POS['TWA']	= ['NP']
+POS['Houston']	= ['NP']
+POS['flight']	= ['Nominal']
+POS['meal']	= ['Nominal']
+POS['money']	= ['Nominal']
+POS['include']	= ['VP']
+POS['prefer']	= ['VP']
 
 sent = ['I','prefer']
 count = 0
