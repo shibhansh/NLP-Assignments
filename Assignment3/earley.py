@@ -110,25 +110,33 @@ for list_ in chart:
 		print sub_list
 	count += 1
 
-def print_parse_trees(state, string_to_print):
+def print_parse_trees(state, parse_tree):
 	# Now we have to recurse
 	if state[len(state)-1] == []:
 		# string_to_print
+		parse_tree.append(state[0])
+		temp_list = [state[1]]
+		parse_tree.append(temp_list)
 		print "" + state[0] + "->" + state[1] + "",
 	else:
+		parse_tree.append(state[0])
+		# parse_tree.append([])
 		print ""+ state[0] + "->(",
 		for i in range(0,len(state[len(state)-1])) :
 			j = state[len(state)-1][i][0]
 			k = state[len(state)-1][i][1]
-			print_parse_trees( chart[j][k] , string_to_print)
+			temp_tree = []
+			print_parse_trees( chart[j][k] , temp_tree)
+			parse_tree.append(temp_tree)
 			if i != len(state[len(state)-1])-1:
 				print ",",
 		print ")",
 
 for current_state in chart[len(chart)-1]:
 	if current_state[:3] == ['root','S','.']:
-		string_to_print = ""
-		print_parse_trees(current_state,string_to_print)
+		parse_tree = []
+		print_parse_trees(current_state,parse_tree)
+		print parse_tree
 
 # terminals = ['Papa', 'ate', 'the', 'a', 'caviar', 'spoon', 'with']
 # non_terminals = ['root','S', 'NP', 'VP','Verb', 'PP','Noun','Det','P']
