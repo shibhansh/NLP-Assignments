@@ -103,12 +103,12 @@ def earley_parser():
 chart = [[] for i in range(0,len(sent)+1)]
 earley_parser()
 
-count = 0
-for list_ in chart:
-	print count
-	for sub_list in list_:
-		print sub_list
-	count += 1
+# count = 0
+# for list_ in chart:
+# 	print count
+# 	for sub_list in list_:
+# 		print sub_list
+# 	count += 1
 
 def print_parse_trees(state, parse_tree):
 	# Now we have to recurse
@@ -117,20 +117,15 @@ def print_parse_trees(state, parse_tree):
 		parse_tree.append(state[0])
 		temp_list = [state[1]]
 		parse_tree.append(temp_list)
-		print "" + state[0] + "->" + state[1] + "",
 	else:
 		parse_tree.append(state[0])
 		# parse_tree.append([])
-		print ""+ state[0] + "->(",
 		for i in range(0,len(state[len(state)-1])) :
 			j = state[len(state)-1][i][0]
 			k = state[len(state)-1][i][1]
-			temp_tree = []
-			print_parse_trees( chart[j][k] , temp_tree)
-			parse_tree.append(temp_tree)
-			if i != len(state[len(state)-1])-1:
-				print ",",
-		print ")",
+			sub_tree = []
+			print_parse_trees( chart[j][k] , sub_tree)
+			parse_tree.append(sub_tree)
 
 for current_state in chart[len(chart)-1]:
 	if current_state[:3] == ['root','S','.']:
