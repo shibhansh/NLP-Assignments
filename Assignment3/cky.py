@@ -9,7 +9,7 @@ grammar['PP'] = [['P', 'NP']]
 grammar['VP'] = [['V','NP'],['VP','PP']]
 grammar['P'] = [['with']]
 grammar['V'] = [['saw']]
-grammar['NP'] = [['NP','PP'],['astronomers'],['binoculars'],['stars'],['telescope']]
+grammar['NP'] = [['NP','PP'],['astronomers'],['binoculars'],['stars'],['telescope'],['saw']]
 
 sent = ['astronomers', 'saw', 'stars', 'with', 'binoculars']
 
@@ -17,8 +17,9 @@ sent = ['astronomers', 'saw', 'stars', 'with', 'binoculars']
 mat = [[[]for x in range(len(sent))]for y in range(len(sent))]
 back = [[[]for x in range(len(sent))]for y in range(len(sent))]
 
-def print_mat(matrix):
-	for sub_list in matix:
+# function to cleanly print a matrix
+def print_mat(mat):
+	for sub_list in mat:
 		print sub_list
 
 def  initialize():
@@ -35,23 +36,17 @@ def  initialize():
 					# add this rule in the cell
 					mat[interator_sent][interator_sent].append([A,sent[interator_sent]])
 
-# Write a DFS like function build the trees
-# def dfs(mat,back,depth,tree,i,j):
-# 	# if tree is completed we need to print it
-# 	mat[i][j]
-# 	dfs(mat,back,depth+1)
-
 initialize()
 
-constructing the matrix for CKY algorithm
+# constructing the matrix for CKY algorithm
 for span in range(1,len(sent)):
 	for begin in range(0, len(sent)-span):
 		# begin & end store the address of the current cell
 		end = begin + span
-		print begin,end
+		# print begin,end
 		# Searching in all possible combination of cells
 		for split in range(begin,end):
-			print begin,split,"        ",split+1,end
+			# print begin,split,"        ",split+1,end
 			# Searching for the non-terminal whose rule's RHS are in mat[begin][split] & mat[split+1][end]
 			# append the resulting rule in mat[begin][end]
 			# print mat[begin][split]
@@ -63,13 +58,38 @@ for span in range(1,len(sent)):
 						for sub_list in grammar[A]:
 							if len(sub_list) == 2:
 								if sub_list[0] == non_terminal_1 and sub_list[1] == non_terminal_2:
-									print A, non_terminal_1, non_terminal_2
+									# print A, non_terminal_1, non_terminal_2
 									# mat[begin][end] stores the rule, i.e. A -> non_terminal_1 , non_terminal_2
 									mat[begin][end].append([A,non_terminal_1,non_terminal_2])
 									# back stores corresponding to every entry in mat[begin][end] the location of non-terminals on the RHS of rule & their location in their cell
 									back[begin][end].append([[begin,split,index_rule_1],[split+1,end,index_rule_2]])
 
-print_mat(mat)
+# row_cell is the row_cell^th row
+def print_parse_trees(index_in_cell,row_cell,column_cell,sub_tree):
+	if row_cell == column_cell:
+		sub_tree.append(mat[row_cell][column_cell][index_in_cell])
+	else:
+		sub_tree.append( mat[row_cell][column_cell][index_in_cell][0] )
+		sub_sub_tree = []
+		left_row_cell = back[row_cell][column_cell][index_in_cell][0][0]
+		left_cloumn_cell = back[row_cell][column_cell][index_in_cell][0][1]
+		left_index_in_cell = back[row_cell][column_cell][index_in_cell][0][2]
+		print_parse_trees(left_index_in_cell, left_row_cell, left_cloumn_cell, sub_sub_tree)
+		sub_tree.append(sub_sub_tree)
+		right_row_cell = back[row_cell][column_cell][index_in_cell][1][0]
+		right_cloumn_cell = back[row_cell][column_cell][index_in_cell][1][1]
+		right_index_in_cell = back[row_cell][column_cell][index_in_cell][1][2]
+		sub_sub_tree = []
+		print_parse_trees(right_index_in_cell, right_row_cell, right_cloumn_cell,sub_sub_tree)
+		sub_tree.append(sub_sub_tree)
+
+for index, rule in enumerate(mat[0][len(sent)-1]):
+	if rule[0] == 'S':
+		parse_tree = []
+		i = 0
+		j = len(sent)-1
+		print_parse_trees(index,i,j,parse_tree)
+		print parse_tree
 
 # Grammar
 # S -> NP VP
