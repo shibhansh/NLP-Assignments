@@ -1,17 +1,36 @@
 # 'teminals' is the list containing the terminals in grammar
-terminals = ['astronomers', 'saw', 'stars', 'with', 'binoculars','telescope']
+# terminals = ['astronomers', 'saw', 'stars', 'with', 'binoculars','telescope']
+# # 'non_teminals' is the list containing the non-terminals in grammar
+# non_terminals = ['S', 'NP', 'VP', 'PP', 'P', 'V']
+# # grammar is the dictionary containing the grammar rules, for every key we store all possible transistions from it a list.
+# grammar = {}
+# grammar['S'] =  [['NP', 'VP']]
+# grammar['PP'] = [['P', 'NP']]
+# grammar['VP'] = [['V','NP'],['VP','PP']]
+# grammar['P'] = [['with']]
+# grammar['V'] = [['saw']]
+# grammar['NP'] = [['NP','PP'],['astronomers'],['binoculars'],['stars'],['telescope'],['saw']]
+
+# sent = ['astronomers', 'saw', 'stars', 'with', 'binoculars']
+
+# 'teminals' is the list containing the terminals in grammar
+terminals = ['book', 'inculde','I','she','me','flight','meal','money', 'prefer','Houston', 'TWA']
 # 'non_teminals' is the list containing the non-terminals in grammar
-non_terminals = ['S', 'NP', 'VP', 'PP', 'P', 'V']
+non_terminals = ['S', 'NP', 'VP','X1','X2','PP','Det','Aux', 'V', 'Nominal', 'N']
 # grammar is the dictionary containing the grammar rules, for every key we store all possible transistions from it a list.
 grammar = {}
-grammar['S'] =  [['NP', 'VP']]
+grammar['S'] =  [['NP', 'VP'],['X1','VP'],['book'],['include'],['prefer'],['V','NP'],['X2','PP'],['V','PP'],['VP','PP']]
+grammar['X1'] = [['Aux','NP']]
+grammar['NP'] = [['Det','Nominal'],['I'],['she'],['me'],['TWA'],['Houston']]
+grammar['Nominal'] = [['book'],['flight'],['meal'],['money'],['Nominal','N'],['Nominal','PP']]
 grammar['PP'] = [['P', 'NP']]
-grammar['VP'] = [['V','NP'],['VP','PP']]
-grammar['P'] = [['with']]
-grammar['V'] = [['saw']]
-grammar['NP'] = [['NP','PP'],['astronomers'],['binoculars'],['stars'],['telescope'],['saw']]
-
-sent = ['astronomers', 'saw', 'stars', 'with', 'binoculars']
+grammar['VP'] = [['V','PP'],['VP','PP'],['V','NP'],['X2','PP'],['book'],['include'],['prefer']]
+grammar['X2'] = [['V','NP']]
+grammar['Aux'] = []
+grammar['Det'] = []
+grammar['P'] = []
+grammar['V'] = []
+sent = ['I','prefer']
 
 # mat is the data-structure for the CKY algorithm & back contains the pointers to retrace the trees
 mat = [[[]for x in range(len(sent))]for y in range(len(sent))]
@@ -86,56 +105,5 @@ def print_parse_trees(index_in_cell,row_cell,column_cell,sub_tree):
 for index, rule in enumerate(mat[0][len(sent)-1]):
 	if rule[0] == 'S':
 		parse_tree = []
-		i = 0
-		j = len(sent)-1
-		print_parse_trees(index,i,j,parse_tree)
+		print_parse_trees(index,0,len(sent)-1,parse_tree)
 		print parse_tree
-
-# Grammar
-# S -> NP VP
-# S -> X1 VP
-# S -> book | include | prefer
-# X1 -> Aux NP
-# S -> Verb NP
-# S -> X2 PP
-# S -> Verb PP
-# S -> VP PP
-# NP -> I | she | me
-# NP -> TWA | Houston
-# NP -> Det Nominal
-# Nominal -> book | flight | meal | money
-# Nominal -> Nominal Noun
-# Nominal -> Nominal PP
-# VP -> book | include | prefer
-# VP -> Verb NP
-# VP -> X2 PP
-# X2 -> Verb NP
-# VP -> Verb PP
-# VP -> VP PP
-# PP -> Preposition NP
-
-# terminals = ['book', 'I', 'she', 'me', 'TWA', 'Houston', 'flight', 'meal', 'money', 'include', 'prefer']
-# non_terminals = ['S', 'NP', 'VP', 'X1', 'Aux', 'Verb', 'PP', 'Det', 'Nominal', 'X2', 'Preposition', 'Noun']
-# grammar = {}
-# grammar['S'] =  [['NP', 'VP'], ['X1','VP'],['Verb','NP'],['X2','PP'], ['Verb','PP'], ['VP' ,'PP'],['book'], ['include'], ['prefer']]
-# grammar['X1'] = [['Aux' 'NP']]
-# grammar['NP'] = [['Det','Nominal'],['I'],['she'],['me'],['TWA'],['Houston']]
-# grammar['Nominal'] = [['Nominal','Noun'], ['Nominal','PP'],['book'],['flight'],['meal'],['money']]
-# grammar['VP'] = [['book'],['include'],['prefer'],['Verb','NP'],['X2','PP'],['Verb','PP'],['VP','PP']]
-# grammar['X2'] = [['Verb','NP']]
-# grammar['PP'] = [['Preposition', 'NP']]
-# POS = {}
-# POS['book']	= ['S','Nominal','VP']
-# POS['I']	= ['NP']
-# POS['she']	= ['NP']
-# POS['me']	= ['NP']
-# POS['TWA']	= ['NP']
-# POS['Houston']	= ['NP']
-# POS['flight']	= ['Nominal']
-# POS['meal']	= ['Nominal']
-# POS['money']	= ['Nominal']
-# POS['include']	= ['VP']
-# POS['prefer']	= ['VP']
-
-# sent = ['I','prefer']
-# count = 0
