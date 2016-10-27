@@ -34,6 +34,8 @@ POS['to']		= ['Prep']
 POS['on']		= ['Prep']
 sent = ['book','that','flight']
 
+# add comments for the state of the data structure used, i.e. the shape of elements of chart[i] and chart itself
+# add a method to print multiple parse trees
 
 def enqueue(state,chart_index):
 	found = False
@@ -110,28 +112,28 @@ earley_parser()
 # 		print sub_list
 # 	count += 1
 
-def print_parse_trees(state, parse_tree):
+parse_tree = []
+def print_parse_trees(state, sub_tree):
 	# Now we have to recurse
 	if state[len(state)-1] == []:
 		# string_to_print
-		parse_tree.append(state[0])
-		temp_list = [state[1]]
-		parse_tree.append(temp_list)
+		sub_tree.append(state[0])
+		sub_tree.append([state[1]])
 	else:
-		parse_tree.append(state[0])
-		# parse_tree.append([])
-		for i in range(0,len(state[len(state)-1])) :
+		sub_tree.append(state[0])
+		element_on_rhs_of_rule = len(state[len(state)-1])
+		for i in range(0,element_on_rhs_of_rule):
 			j = state[len(state)-1][i][0]
 			k = state[len(state)-1][i][1]
-			sub_tree = []
-			print_parse_trees( chart[j][k] , sub_tree)
-			parse_tree.append(sub_tree)
+			sub_sub_tree = []
+			print_parse_trees( chart[j][k] , sub_sub_tree)
+			sub_tree.append(sub_sub_tree)
 
 for current_state in chart[len(chart)-1]:
 	if current_state[:3] == ['root','S','.']:
-		parse_tree = []
 		print_parse_trees(current_state,parse_tree)
 		print parse_tree
+		parse_tree = []
 
 # terminals = ['Papa', 'ate', 'the', 'a', 'caviar', 'spoon', 'with']
 # non_terminals = ['root','S', 'NP', 'VP','Verb', 'PP','Noun','Det','P']
