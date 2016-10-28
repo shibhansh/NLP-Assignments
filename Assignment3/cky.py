@@ -1,4 +1,4 @@
-# 'teminals' is the list containing the terminals in grammar
+# # 'teminals' is the list containing the terminals in grammar
 # terminals = ['astronomers', 'saw', 'stars', 'with', 'binoculars','telescope']
 # # 'non_teminals' is the list containing the non-terminals in grammar
 # non_terminals = ['S', 'NP', 'VP', 'PP', 'P', 'V']
@@ -10,7 +10,6 @@
 # grammar['P'] = [['with']]
 # grammar['V'] = [['saw']]
 # grammar['NP'] = [['NP','PP'],['astronomers'],['binoculars'],['stars'],['telescope'],['saw']]
-
 # sent = ['astronomers', 'saw', 'stars', 'with', 'binoculars']
 
 # 'teminals' is the list containing the terminals in grammar
