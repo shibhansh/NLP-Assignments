@@ -10,4 +10,5 @@
 brown_model
 imdb_model
 *.w2v
+*.zip
 *.BoV_tf-idf
